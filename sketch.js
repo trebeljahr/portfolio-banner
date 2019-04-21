@@ -40,7 +40,7 @@ function resize() {
     sampleFactor: 0.2
   });
   points.forEach(p => {
-    dot = new Dot(p.x, p.y);
+    dot = new Dot(p.x, p.y, w);
     dots.push(dot);
   });
 }
