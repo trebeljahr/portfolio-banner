@@ -15,7 +15,7 @@ function setup() {
 function draw() {
   background(51);
   fill(255);
-  dots.forEach(dot => {
+  dots.forEach((dot, index) => {
     dot.behaviors();
     if (dist(mouseX, mouseY, dot.pos.x, dot.pos.y) < 50) {
       dot.applyForce(
@@ -23,7 +23,11 @@ function draw() {
       );
     }
     dot.update();
-    dot.show();
+    if (index === dots.length - 1) {
+      dot.show(255, 0, 0);
+    } else {
+      dot.show(255, 255, 255);
+    }
   });
 }
 function resize() {
@@ -32,8 +36,8 @@ function resize() {
   points = [];
   dots = [];
   createCanvas(w, h);
-  points = font.textToPoints("DEVELOPER", w / 5.1, h / 2, 100, {
-    sampleFactor: 0.15
+  points = font.textToPoints("DEVELOPER", w / 6.5, 200, w / 8, {
+    sampleFactor: 0.2
   });
   points.forEach(p => {
     dot = new Dot(p.x, p.y);

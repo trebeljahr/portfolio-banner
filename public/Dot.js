@@ -4,12 +4,12 @@ class Dot {
     this.target = createVector(x, y);
     this.vel = p5.Vector.random2D();
     this.acc = createVector();
-    this.r = 6;
+    this.r = 5;
     this.maxspeed = 10;
     this.maxforce = 1;
   }
-  show = () => {
-    stroke(255);
+  show = (r, g, b) => {
+    stroke(r, g, b);
     strokeWeight(this.r);
     point(this.pos.x, this.pos.y);
   };
