@@ -4,7 +4,7 @@ class Dot {
     this.target = createVector(x, y);
     this.vel = p5.Vector.random2D();
     this.acc = createVector();
-    this.r = w < 600 ? (w < 400 ? 1 : 3) : 5;
+    this.r = w < 600 ? (w < 400 ? 1.5 : 3) : 5;
     this.maxspeed = 10;
     this.maxforce = 1;
   }
