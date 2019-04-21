@@ -37,7 +37,7 @@ function resize() {
   points = font.textToPoints("Develop", w / 6.5, w / 7, w / 8, {
     sampleFactor: w < 600 ? 0.5 : 0.25
   });
-  points2 = font.textToPoints("your ideas", w / 6.5, w / 5, w / 8, {
+  points2 = font.textToPoints("your ideas", w / 6.5, w / 4, w / 8, {
     sampleFactor: w < 600 ? 0.5 : 0.25
   });
 
