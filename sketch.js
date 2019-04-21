@@ -34,7 +34,7 @@ function resize() {
   points2 = [];
   dots = [];
   createCanvas(w, h);
-  points = font.textToPoints("Develop", w / 6.5, h - 200, w / 8, {
+  points = font.textToPoints("Develop", w / 6.5, h - 300, w / 8, {
     sampleFactor: w < 600 ? 0.5 : 0.25
   });
   points2 = font.textToPoints("your ideas", w / 6.5, h - 400, w / 8, {
