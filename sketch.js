@@ -23,7 +23,7 @@ function draw() {
       );
     }
     dot.update();
-    if (index === dots.length - 1) {
+    if (index >= dots.length * 0.5 || index <= dots.length * 0.7) {
       dot.show(255, 0, 0);
     } else {
       dot.show(255, 255, 255);
@@ -36,7 +36,6 @@ function resize() {
   points = [];
   dots = [];
   createCanvas(w, h);
-  console.log(map(w, w * 2, 0, 0, 0.5));
   points = font.textToPoints("DEVELOPER", w / 6.5, h / 3, w / 8, {
     sampleFactor: w < 600 ? 0.5 : 0.25
   });
