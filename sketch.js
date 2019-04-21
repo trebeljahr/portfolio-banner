@@ -4,6 +4,7 @@ let dot;
 let interval;
 let font;
 let points;
+let points2;
 let dots = [];
 function preload() {
   font = loadFont("./assets/Avenir.otf");
@@ -34,12 +35,21 @@ function resize() {
   w = window.innerWidth;
   h = window.innerHeight;
   points = [];
+  points2 = [];
   dots = [];
   createCanvas(w, h);
-  points = font.textToPoints("DEVELOPER", w / 6.5, h / 3, w / 8, {
+  points = font.textToPoints("Develop", w / 6.5, h / 4, w / 8, {
     sampleFactor: w < 600 ? 0.5 : 0.25
   });
+  points2 = font.textToPoints("your ideas", w / 6.5, h / 2, w / 8, {
+    sampleFactor: w < 600 ? 0.5 : 0.25
+  });
+
   points.forEach(p => {
+    dot = new Dot(p.x, p.y, w);
+    dots.push(dot);
+  });
+  points2.forEach(p => {
     dot = new Dot(p.x, p.y, w);
     dots.push(dot);
   });
