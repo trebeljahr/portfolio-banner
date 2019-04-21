@@ -1,10 +1,10 @@
 class Dot {
-  constructor(x, y) {
+  constructor(x, y, w) {
     this.pos = createVector(random(width), random(height));
     this.target = createVector(x, y);
     this.vel = p5.Vector.random2D();
     this.acc = createVector();
-    this.r = 5;
+    this.r = w < 600 ? 2 : 5;
     this.maxspeed = 10;
     this.maxforce = 1;
   }
