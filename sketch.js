@@ -37,7 +37,7 @@ function resize() {
   dots = [];
   createCanvas(w, h);
   points = font.textToPoints("DEVELOPER", w / 6.5, 200, w / 8, {
-    sampleFactor: w < 600 ? w / 200 : w / 600
+    sampleFactor: map(w, 0, w, 0, 0.3)
   });
   points.forEach(p => {
     dot = new Dot(p.x, p.y, w);
