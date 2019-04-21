@@ -1,5 +1,9 @@
 var express = require("express");
 var app = express();
 var server = app.listen(4000);
-app.use(express.static("public"));
+var cors = require("cors");
+
+app.use(cors());
+app.use(express.static(__dirname + "/public"));
+
 console.log("Server is running!");
