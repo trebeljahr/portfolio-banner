@@ -24,11 +24,7 @@ function draw() {
       );
     }
     dot.update();
-    if (index >= dots.length / 2.5 && index <= dots.length) {
-      dot.show(255, 0, 0);
-    } else {
-      dot.show(255, 255, 255);
-    }
+    dot.show(249, 220, 92);
   });
 }
 function resize() {
