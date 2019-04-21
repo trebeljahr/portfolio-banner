@@ -1,6 +1,6 @@
 class Dot {
   constructor(x, y, w) {
-    this.pos = createVector(random(width), random(height));
+    this.pos = createVector(random(width), random(height / 2));
     this.target = createVector(x, y);
     this.vel = p5.Vector.random2D();
     this.acc = createVector();
