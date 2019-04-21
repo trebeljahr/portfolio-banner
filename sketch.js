@@ -6,7 +6,7 @@ let font;
 let points;
 let dots = [];
 function preload() {
-  font = loadFont("/assets/Avenir.otf");
+  font = loadFont("./assets/Avenir.otf");
 }
 function setup() {
   window.addEventListener("resize", resize);
