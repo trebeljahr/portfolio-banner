@@ -23,7 +23,7 @@ function draw() {
       );
     }
     dot.update();
-    if (index >= dots.length * 0.5 || index <= dots.length * 0.7) {
+    if (index >= dots.length / 2 || index <= dots.length) {
       dot.show(255, 0, 0);
     } else {
       dot.show(255, 255, 255);
