@@ -1,8 +1,14 @@
 var express = require("express");
 var app = express();
 var server = app.listen(4000);
+
 var cors = require("cors");
-const whitelist = ["https://ricotrebeljahr.de/coding", "http://localhost:3000"];
+const whitelist = [
+  "https://ricotrebeljahr.de/coding",
+  "http://localhost:3000",
+  "http://localhost:4000",
+  "https://sketches.ricotrebeljahr.de"
+];
 const corsOptions = {
   origin: function(origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {
