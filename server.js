@@ -3,23 +3,8 @@ var app = express();
 var server = app.listen(4000);
 
 var cors = require("cors");
-const whitelist = [
-  "https://ricotrebeljahr.de/coding",
-  "http://localhost:3000",
-  "http://localhost:4000",
-  "https://sketches.ricotrebeljahr.de"
-];
-const corsOptions = {
-  origin: function(origin, callback) {
-    if (whitelist.indexOf(origin) !== -1) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  }
-};
 
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(express.static(__dirname + "/public"));
 
 console.log("Server is running!");
