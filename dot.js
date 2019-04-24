@@ -1,3 +1,4 @@
+p5.disableFriendlyErrors = true;
 const Dot = class Dot {
   constructor(x, y, w) {
     this.pos = createVector(random(0, width), random(0, height / 2));
