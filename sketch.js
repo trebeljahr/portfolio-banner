@@ -18,7 +18,11 @@ function draw() {
   fill(255);
   dots.forEach((dot, index) => {
     dot.behaviors();
-    if (dist(mouseX, mouseY, dot.pos.x, dot.pos.y) < 50) {
+    if (
+      (mouseX - dot.pos.x) * (mouseX - dot.pos.x) +
+        (mouseY - dot.pos.y) * (mouseY - dot.pos.y) <
+      50 * 50
+    ) {
       dot.applyForce(
         createVector(-0.1 * (mouseX - dot.pos.x), -0.1 * (mouseY - dot.pos.y))
       );
