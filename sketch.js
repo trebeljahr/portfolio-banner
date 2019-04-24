@@ -1,4 +1,4 @@
-import Dot from "./Dot.js";
+import { Dot } from "./dot.js";
 let w = window.innerWidth;
 let h = window.innerHeight;
 let dot;
