@@ -21,14 +21,14 @@ class Dot {
     this.vel.add(this.acc);
     this.acc.mult(0);
   };
-  behaviors() {
+  behaviors = () => {
     var arrive = this.arrive(this.target);
 
     arrive.mult(0.5);
 
     this.applyForce(arrive);
-  }
-  arrive(target) {
+  };
+  arrive = target => {
     var desired = p5.Vector.sub(target, this.pos);
     var d = desired.mag();
     var speed = this.maxspeed;
@@ -39,5 +39,5 @@ class Dot {
     var steer = p5.Vector.sub(desired, this.vel);
     steer.limit(this.maxforce);
     return steer;
-  }
+  };
 }
