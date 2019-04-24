@@ -1,4 +1,4 @@
-class Dot {
+export class Dot {
   constructor(x, y, w) {
     this.pos = createVector(random(0, width), random(0, height / 2));
     this.target = createVector(x, y);
