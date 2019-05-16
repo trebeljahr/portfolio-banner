@@ -7,12 +7,18 @@ let font;
 let points;
 let points2;
 let dots = [];
+let timerId = null;
 function preload() {
   font = loadFont("./assets/Avenir.otf");
 }
 function setup() {
-  window.addEventListener("resize", resize);
-  resize();
+  window.addEventListener("resize", () => {
+    console.log(timerId);
+    if (timerId === null) {
+      timerId = setTimeout(resize, 1000);
+    }
+  });
+  timerId = setTimeout(resize, 1000);
 }
 function draw() {
   background(51);
@@ -38,6 +44,7 @@ function resize() {
   points = [];
   points2 = [];
   dots = [];
+  timerId = null;
   createCanvas(w, h);
   points = font.textToPoints("Develop", w / 6.5, w / 7, w / 8, {
     sampleFactor: w < 600 ? (w < 400 ? 0.7 : 0.5) : 0.25
