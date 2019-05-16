@@ -18,7 +18,11 @@ function setup() {
       timerId = setTimeout(resize, 1000);
     }
   });
+<<<<<<< Updated upstream
   resize();
+=======
+  timerId = setTimeout(resize, 1000);
+>>>>>>> Stashed changes
 }
 function draw() {
   background(51);
