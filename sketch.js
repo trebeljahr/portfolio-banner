@@ -18,7 +18,7 @@ function setup() {
       timerId = setTimeout(resize, 1000);
     }
   });
-  timerId = setTimeout(resize, 1000);
+  resize();
 }
 function draw() {
   background(51);
