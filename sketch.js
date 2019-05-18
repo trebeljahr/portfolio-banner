@@ -18,26 +18,14 @@ function setup() {
       timerId = setTimeout(resize, 1000);
     }
   });
-<<<<<<< Updated upstream
   resize();
-=======
-  timerId = setTimeout(resize, 1000);
->>>>>>> Stashed changes
 }
 function draw() {
   background(51);
   fill(255);
   dots.forEach((dot, index) => {
     dot.behaviors();
-    if (
-      (mouseX - dot.pos.x) * (mouseX - dot.pos.x) +
-        (mouseY - dot.pos.y) * (mouseY - dot.pos.y) <
-      50 * 50
-    ) {
-      dot.applyForce(
-        createVector(-0.1 * (mouseX - dot.pos.x), -0.1 * (mouseY - dot.pos.y))
-      );
-    }
+    dot.flee();
     dot.update();
     dot.show(249, 220, 92);
   });
