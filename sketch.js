@@ -7,11 +7,17 @@ let font;
 let points;
 let points2;
 let dots = [];
+let timerId = null;
 function preload() {
   font = loadFont("./assets/Avenir.otf");
 }
 function setup() {
-  window.addEventListener("resize", resize);
+  window.addEventListener("resize", () => {
+    console.log(timerId);
+    if (timerId === null) {
+      timerId = setTimeout(resize, 1000);
+    }
+  });
   resize();
 }
 function draw() {
@@ -19,15 +25,7 @@ function draw() {
   fill(255);
   dots.forEach((dot, index) => {
     dot.behaviors();
-    if (
-      (mouseX - dot.pos.x) * (mouseX - dot.pos.x) +
-        (mouseY - dot.pos.y) * (mouseY - dot.pos.y) <
-      50 * 50
-    ) {
-      dot.applyForce(
-        createVector(-0.1 * (mouseX - dot.pos.x), -0.1 * (mouseY - dot.pos.y))
-      );
-    }
+    dot.flee();
     dot.update();
     dot.show(249, 220, 92);
   });
@@ -38,6 +36,7 @@ function resize() {
   points = [];
   points2 = [];
   dots = [];
+  timerId = null;
   createCanvas(w, h);
   points = font.textToPoints("Develop", w / 6.5, w / 7, w / 8, {
     sampleFactor: w < 600 ? (w < 400 ? 0.7 : 0.5) : 0.25

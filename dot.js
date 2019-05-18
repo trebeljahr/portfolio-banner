@@ -22,6 +22,16 @@ const Dot = class Dot {
   applyForce(f) {
     this.acc.add(f);
   }
+  flee() {
+    let xDiff = mouseX - this.pos.x;
+    let yDiff = mouseY - this.pos.y;
+    let dist = xDiff * xDiff + yDiff * yDiff;
+    if (dist < 2500) {
+      let fleeVector = createVector(-xDiff, -yDiff);
+      fleeVector.setMag(1);
+      this.applyForce(fleeVector);
+    }
+  }
   update() {
     this.pos.add(this.vel);
     this.vel.add(this.acc);
